@@ -1,247 +1,169 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>مركز الخدمة والصيانة</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شركة مكافحة الحشرات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cairo", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.7;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    header {
+      background: #0b3d2e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-<style>
-/* ===== RESET ===== */
-* {margin:0;padding:0;box-sizing:border-box;font-family:"Cairo", sans-serif;}
-body {background:#f6f4fa;color:#222;line-height:1.7;scroll-behavior:smooth;}
-.container {width:90%;margin:auto;max-width:1100px;}
+    nav {
+      background: #0a2f24;
+      padding: 10px;
+      text-align: center;
+    }
 
-/* ===== Header ===== */
-.site-header {
-    background:#6a1b9a;
-    color:white;
-    padding:20px 0;
-    border-bottom-left-radius:25px;
-    border-bottom-right-radius:25px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.header-row {display:flex;justify-content:space-between;align-items:center;}
-.site-title {font-size:24px;font-weight:800;letter-spacing:1px;}
-.hamburger {background:none;border:none;cursor:pointer;z-index:101;}
-.hamburger span {display:block;width:28px;height:3px;background:white;margin:5px 0;border-radius:5px;transition:0.3s;}
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* ===== Side nav ===== */
-.side-nav {
-    position:fixed;
-    top:0;
-    right:-300px;
-    width:300px;
-    height:100vh;
-    background:#4a0072;
-    padding:30px 20px;
-    transition:right 0.3s ease;
-    z-index:99;
-}
-.side-nav.open {right:0;}
-.side-nav ul li {list-style:none;padding:15px 0;font-size:18px;color:#fff;cursor:pointer;}
-.side-nav a {color:#fff;text-decoration:none;transition:0.3s;}
-.side-nav a:hover {color:#ffeb3b;}
-.side-nav .sub {margin-top:10px;padding-right:15px;display:none;}
-.has-sub:hover .sub {display:block;}
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581579188871-45ea61f2a0da?auto=format&fit=crop&w=1200&q=60') center/cover;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      font-size: 32px;
+      font-weight: bold;
+    }
 
-/* ===== Hero ==== */
-.hero {
-    /* تم التعديل: التدرج يبدأ بالبنفسجي وينتهي بشفافية جزئية للحفاظ على النص */
-    background-image: 
-        linear-gradient(to bottom, #6a1b9a, rgba(106, 27, 154, 0.4)),
-        url('images/image.jpg'); /* المسار الصحيح */
-        
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* نهاية تعديلات الخلفية */
-    
-    height:480px;
-    border-radius:0 0 25px 25px;
-    position: relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:80px;
-    overflow:hidden;
-}
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
 
-/* تأثير الحركة الخفيف */
-.hero-overlay {
-    text-align:center;
-    color:white;
-    animation: fadeInUp 1.6s ease-in-out;
-}
-@keyframes fadeInUp {
-    from {opacity:0; transform:translateY(25px);}
-    to {opacity:1; transform:translateY(0);}
-}
+    h2 {
+      color: #0b3d2e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-.hero-overlay h1{
-    font-size: clamp(28px, 5vw, 60px);
-    font-weight:800;
-    margin-bottom:10px;
-    letter-spacing:1px;
-}
-.hero-overlay h2{
-    font-size: clamp(20px, 3vw, 36px);
-    font-weight:600;
-    margin-bottom:15px;
-}
-.hero-overlay p{
-    font-size: clamp(16px, 2vw, 22px);
-    margin-bottom:20px;
-    max-width:650px;
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-/* Buttons */
-.btn {padding:12px 25px;border-radius:12px;cursor:pointer;font-weight:700;text-decoration:none;margin-top:10px;transition:all 0.3s ease;}
-.btn:hover {transform:scale(1.05);}
-.primary {background:#ff6f00;color:white;}
-.secondary {background:#8e24aa;color:white;}
+    .service-box {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
+    }
 
-/* ===== Services ===== */
-section h3 {text-align:center;font-size:clamp(22px,3vw,32px);margin-bottom:25px;color:#6a1b9a;}
-.cards {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-bottom:40px;
-}
-.card {
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.12);
-    text-align:center;
-    transition:all 0.4s ease;
-}
-.card:hover {
-    transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-.card h4 {margin-bottom:10px;color:#6a1b9a;font-weight:700;font-size:clamp(18px,2.5vw,24px);}
-.card p{font-size:clamp(14px,1.8vw,18px);color:#333;}
+    .service-box img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
 
-/* Contact Box */
-.contact-box {
-    background:white;padding:30px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.12);text-align:center;margin-bottom:50px;
-}
-.contact-box .big-phone {font-size:clamp(28px,4vw,36px);font-weight:900;color:#ff6f00;margin-bottom:15px;}
-.contact-box p{font-size:clamp(16px,2vw,20px);margin-bottom:10px;}
+    .cta {
+      background: #0b3d2e;
+      color: #fff;
+      padding: 25px;
+      margin-top: 40px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 22px;
+    }
 
-/* Chat Box */
-.chat-box {
-    display:flex;position:fixed;bottom:15px;right:15px;background:white;padding:8px;border-radius:20px;width:260px;box-shadow:0 6px 20px rgba(0,0,0,0.15);z-index:999;
-}
-.chat-box input {border:none;width:100%;padding:8px 12px;border-radius:15px;}
-.chat-box button {background:#ff6f00;color:white;border:none;padding:8px 14px;border-radius:12px;cursor:pointer;transition:0.3s;}
-.chat-box button:hover {transform:scale(1.1);}
-
-/* WhatsApp Floating Button */
-.whats-btn {position:fixed;bottom:90px;right:15px;background:#25d366;padding:16px;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,0.25);transition:0.3s;}
-.whats-btn:hover{transform:scale(1.15);}
-
-/* Footer */
-.site-footer {text-align:center;padding:25px;color:#555;background:#f1f1f1;font-size:clamp(14px,1.5vw,18px);margin-top:30px;}
-
-/* Responsive */
-@media(max-width:768px){
-    .hero{height:380px;}
-    .chat-box{width:200px;}
-}
-</style>
+    footer {
+      margin-top: 40px;
+      background: #0a2f24;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-<div class="container header-row">
-<button id="menuBtn" class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
-<div class="site-title">مركز الخدمة والصيانة</div>
-</div>
-
-<nav id="mainNav" class="side-nav">
-<ul>
-<li><a href="#hero">الرئيسية</a></li>
-<li class="has-sub">مخازن قطع غيار
-<ul class="sub">
-<li><a href="#">قطع غيار غسالات</a></li>
-<li><a href="#">قطع غيار تلاجات</a></li>
-<li><a href="#">قطع غيار شاشات</a></li>
-</ul>
-</li>
-<li><a href="#services">خدماتنا</a></li>
-<li><a href="#contact">اتصل بنا</a></li>
-</ul>
-</nav>
+<header>
+  <h1>شركة مكافحة الحشرات</h1>
+  <p>مكافحة فورية – ضمان نتيجة – بدون رائحة – فريق متخصص</p>
 </header>
 
-<section id="hero" class="hero">
-<div class="hero-overlay">
-<h1>صيانة شاملة</h1>
-<h2>وضمان كامل</h2>
-<p>نقدم خدمة صيانة متكاملة مع أفضل الفنيين وقطع الغيار الأصلية بأعلى جودة.</p>
-<a id="callBtn" class="btn primary">اتصل بنا الآن</a>
-</div>
-</section>
+<nav>
+  <a href="#services">الخدمات</a>
+  <a href="#about">عن الشركة</a>
+  <a href="#contact">اتصل بنا</a>
+</nav>
 
-<section id="services" class="container section">
-<h3>لماذا تختارنا؟</h3>
-<div class="cards">
-<div class="card"><h4>فنيين متخصصين</h4><p>فريق محترف لصيانة جميع الأجهزة المنزلية بسرعة وكفاءة.</p></div>
-<div class="card"><h4>قطع أصلية</h4><p>نستخدم أفضل قطع الغيار مع ضمان حقيقي لكل عملية صيانة.</p></div>
-<div class="card"><h4>خدمة سريعة</h4><p>نصلك في أسرع وقت وبأفضل جودة مع دعم كامل للعملاء.</p></div>
-</div>
-</section>
-
-<section id="contact" class="container section">
-<h3>إضغط هنا للإتصال</h3>
-<div class="contact-box">
-<p class="big-phone">19562</p>
-<p>📱 01222294200</p>
-<p>📱 01280060033</p>
-<a id="openForm" class="btn secondary">إرسال رسالة</a>
-</div>
-</section>
-
-<div id="chatBox" class="chat-box">
-<input id="chatInput" type="text" placeholder="اكتب رسالتك...">
-<button id="sendBtn">▶</button>
+<div class="hero">
+  القضاء على الحشرات في نفس اليوم
 </div>
 
-<a id="whatsBtn" class="whats-btn" href="#" aria-label="واتساب">
-<svg viewBox="0 0 24 24" width="22" height="22" fill="#fff">
-<path d="M20.5 3.5c-2.9-2.9-7.6-2.9-10.5 0-2.1 2.1-2.6 5.2-1.4 7.7L4 20l8.1-4.6c2.5 1.2 5.6.7 7.7-1.4 2.9-2.9 2.9-7.6 0-10.5z"/>
-</svg>
-</a>
+<div class="section" id="services">
+  <h2>خدماتنا</h2>
+  <div class="services">
+    <div class="service-box">
+      <img src="https://img.icons8.com/color/96/cockroach.png" />
+      <h3>مكافحة الصراصير</h3>
+      <p>رش آمن بدون رائحة مع ضمان القضاء التام خلال 24 ساعة.</p>
+    </div>
 
-<footer class="site-footer"><div class="container">Developer : Dia A.Hassan</div></footer>
+    <div class="service-box">
+      <img src="https://img.icons8.com/color/96/ant.png" />
+      <h3>مكافحة النمل</h3>
+      <p>حل جذري للنمل داخل المنازل والمطابخ باستخدام أحدث التقنيات.</p>
+    </div>
 
-<script>
-const WHATSAPP_NUMBER = "01222294200";
-const menuBtn = document.getElementById("menuBtn");
-const mainNav = document.getElementById("mainNav");
-const whatsBtn = document.getElementById("whatsBtn");
-const callBtn = document.getElementById("callBtn");
-const sendBtn = document.getElementById("sendBtn");
-const chatInput = document.getElementById("chatInput");
+    <div class="service-box">
+      <img src="https://img.icons8.com/color/96/bed-bug.png" />
+      <h3>مكافحة بق الفراش</h3>
+      <p>علاج نهائي للبق بضمان إعادة الزيارة مجاناً.</p>
+    </div>
 
-menuBtn.addEventListener("click",()=>{mainNav.classList.toggle("open");});
-whatsBtn.addEventListener("click",()=>{window.open(`https://wa.me/2${WHATSAPP_NUMBER}`,"_blank");});
-callBtn.addEventListener("click",()=>{window.location.href="tel:19562";});
-sendBtn.addEventListener("click",()=>{
- const msg=chatInput.value.trim();
- if(!msg)return;
- window.open(`https://wa.me/2${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
- chatInput.value="";
-});
-</script>
+    <div class="service-box">
+      <img src="https://img.icons8.com/color/96/rat.png" />
+      <h3>مكافحة الفئران</h3>
+      <p>أقوى طعوم آمنة للتخلص من الفئران بسرعة وفعالية.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="about">
+  <h2>عن الشركة</h2>
+  <p>
+    نحن شركة متخصصة في مكافحة الحشرات المنزلية باستخدام مواد آمنة معتمدة دوليًا،
+    نوفر زيارات فورية، وضمان على الخدمة، وأسعار مناسبة للجميع.
+  </p>
+</div>
+
+<div class="section cta" id="contact">
+  للتواصل مباشرة:
+  <br><br>
+  <strong>📞 16275</strong>
+  <br>
+  <strong>
+</div>
+
+<footer>
+  جميع الحقوق محفوظة © 2025
+</footer>
 
 </body>
 </html>
